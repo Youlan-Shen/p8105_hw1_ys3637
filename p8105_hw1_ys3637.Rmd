@@ -4,6 +4,11 @@ output: github_document
 date: "2022-09-24"
 ---
 
+```{r}
+# library all packages that we need at the beginning
+library(ggplot2)
+```
+
 ## Problem 1
 
 ```{r}
@@ -24,4 +29,10 @@ mean(penguins$flipper_length_mm, na.rm = TRUE)
 
 Therefore, we can tell in dataset penguins, it has 8 variables: species of penguins (factor), island (factor), bill length in mm (double), bill depth in mm (double), flipper_length_mm (integer), body_mass_g (integer), sex of penguins (factor), year (int). And the size of the dataset is 344 rows and 8 columns, while the mean of flipper length is 200.9 mm, not including NA.
 
+```{r}
+# create a scatterplot of flipper_length_mm (y) vs bill_length_mm (x)
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+# save the scatter plot file to the project
+ggsave("penguins_scatter_plot_of_flipper_vs_bill.pdf", height = 4, width = 6)
+```
 
