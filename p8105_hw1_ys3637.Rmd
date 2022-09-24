@@ -7,6 +7,7 @@ date: "2022-09-24"
 ```{r}
 # library all packages that we need at the beginning
 library(ggplot2)
+library(tidyverse)
 ```
 
 ## Problem 1
@@ -34,5 +35,20 @@ Therefore, we can tell in dataset penguins, it has 8 variables: species of pengu
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 # save the scatter plot file to the project
 ggsave("penguins_scatter_plot_of_flipper_vs_bill.pdf", height = 4, width = 6)
+```
+
+## Problem 2
+
+```{r}
+# create a dataframe
+df = 
+  tibble(
+    random_N = rnorm(n = 10),
+    logical = random_N > 0,
+    char = c("a", "a", "a", "b", "b", "b", "c", "c", "c", "c"),
+    fac = factor(char, levels = c("a", "b", "c"))
+  )
+# print out the dataframe
+df
 ```
 
