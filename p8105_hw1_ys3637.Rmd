@@ -4,4 +4,15 @@ output: github_document
 date: "2022-09-24"
 ---
 
+## Problem 1
+
+```{r}
+# load data set penguins.
+data("penguins", package = "palmerpenguins")
+# print out the first several lines of the data and we see it has 8 variables:
+# species of penguins (factor), island (factor), bill length in mm (double),
+# bill depth in mm (double), flipper_length_mm (integer), body_mass_g (integer),
+# sex of penguins (factor), year (int).
+head(penguins)
+```
 
