@@ -14,5 +14,9 @@ data("penguins", package = "palmerpenguins")
 # bill depth in mm (double), flipper_length_mm (integer), body_mass_g (integer),
 # sex of penguins (factor), year (int).
 head(penguins)
+# to find the size of the dataset.
+# we can tell penguins dataset has 344 rows and 8 cols.
+nrow(penguins)
+ncol(penguins)
 ```
 
