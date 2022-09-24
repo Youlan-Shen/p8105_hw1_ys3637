@@ -74,4 +74,10 @@ df %>%
 
 From the above, we can see that both random_N and logical variables have a mean--mean of random_N is 0.72 and mean of logical is 0.6--but neither char nor fac has a mean.
 
-
+```{r}
+# apply the as.numeric to each of the variable
+as.numeric(df$random_N)
+as.numeric(df$logical)
+as.numeric(df$char)
+as.numeric(df$fac)
+```
