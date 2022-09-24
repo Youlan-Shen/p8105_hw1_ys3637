@@ -54,11 +54,11 @@ df
 
 ```{r}
 # take the mean of each variable in a dataframe
-# the mean of random_N is 0.72
+# the mean of random_N is the following
 df %>%
   pull(random_N) %>%
   mean()
-# the mean of the logical is 0.6
+# the mean of the logical is the following
 df %>%
   pull(logical) %>%
   mean()
@@ -74,10 +74,18 @@ df %>%
 
 From the above, we can see that both random_N and logical variables have a mean--mean of random_N is 0.72 and mean of logical is 0.6--but neither char nor fac has a mean.
 
-```{r}
-# apply the as.numeric to each of the variable
+```{r, eval = FALSE}
+# apply the as.numeric to each of the variable, the output is not shown
 as.numeric(df$random_N)
 as.numeric(df$logical)
 as.numeric(df$char)
 as.numeric(df$fac)
 ```
+
+After we apply as.numeric function to each variable in dataframe, three of these variables have a numerical result--random_N stays the same, logical becomes 0 or 1, and factor becomes 1, 2, 3. However, character does not successfully change to a numerical vector.
+
+I assume that when we take the mean to each of variable, random_N is numeric, so its mean definitely can be calculated, and logical will be automatically converted to a numeric vector, and its mean will be calculated based on the converted numeric vector.
+
+Even though factor can be converted to a numeric vector through as.numeric function, when we calculate the mean directly on the factor, it will not automatically convert to numeric type, so the result is NA.
+
+For character, since it cannot be converted to numeric, we cannot calculate the mean of a character vector, the result is NA.
